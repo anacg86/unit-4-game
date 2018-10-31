@@ -1,0 +1,19 @@
+#title{
+margin: 10px;
+padding: 10px;
+font-size: 70px;
+}
+#instructionsTitle{
+    margin: 10px;
+    padding: 10px;
+    font-size: 40px;
+}
+#instructionsText{
+    margin: 5px;
+    padding: 5px;
+    font-size: 20px;
+}
+.container {
+    margin: 10px;
+    padding: 10px;
+}
