@@ -9,6 +9,11 @@ function resetGame() {
     randomNumber;
     randomNumber = Math.floor(Math.random() * (120 - 19)) + 19;
     randomNumberText.textContent = "Score to get: " + randomNumber;
+    yourTotalScoreText.textContent = "Your total score is: " + totalPoints;
+    crystalOne.resetPoints();
+    crystalTwo.resetPoints();
+    crystalThree.resetPoints();
+    crystalFour.resetPoints();
 };
 //connect text with variables 
 var randomNumberText = document.getElementById("randomNumberText")
@@ -28,12 +33,16 @@ class Crystal {
     constructor(color) {
         this.color = color;
         //they also have their math function
-        this.points = Math.floor(Math.random() * (12 - 1)) + 1;
+        this.resetPoints();
     }
     //this is adding the points to the previous points
     incrementPoints() {
         console.log(`It's ${this.color}`);
         totalPoints += this.points;
+    }
+    //cada vez se van a resetear los puntos cuando se llame al crystal 
+    resetPoints() {
+        this.points = Math.floor(Math.random() * (12 - 1)) + 1;
     }
 }
 //We have a new crystal with __ color and __ points randomly given before 
@@ -57,21 +66,26 @@ console.log(crystalFour);
 console.log(crystalFour.color);
 console.log(crystalFour.points);
 
-//switch buscar para hacer mas eficiente
+
+//switch buscar para hacer mas eficiente, if it works use case instead of ifs. 
 //when we click on a crystal, the crystal gives out their points to Your Total Score and adds it with the next clicks
 $(".crystal").on("click", function () {
     if ($(this).hasClass(crystalOne.color)) {
         crystalOne.incrementPoints();
-        //switch(crystal) {case "crystalOne.color": crystalOne.incrementPoints();}
+        console.log(crystalOne.points);
+        //switch(crystal) {case "crystalOne.color": crystalOne.incrementPoints(); case "crystalTwo.color": crystalTwo.incrementPoints(); case "crystalThree.color": crystalThree.incrementPoints(); case "crystalFour.color": crystalFour.incrementPoints(); }
     }
     if ($(this).hasClass(crystalTwo.color)) {
         crystalTwo.incrementPoints();
+        console.log(crystalTwo.points);
     }
     if ($(this).hasClass(crystalThree.color)) {
         crystalThree.incrementPoints();
+        console.log(crystalThree.points);
     }
     if ($(this).hasClass(crystalFour.color)) {
         crystalFour.incrementPoints();
+        console.log(crystalFour.points);
     }
     //place value on yourTotalScoreText
     yourTotalScoreText.textContent = "Your total score is: " + totalPoints;
