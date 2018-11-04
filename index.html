@@ -9,43 +9,38 @@
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.3/journal/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-5C8TGNupopdjruopVTTrVJacBbWqxHK9eis5DB+DYE6RfqIJapdLBRUdaZBTq7mE" crossorigin="anonymous">
+    <link href="https://bootswatch.com/4/journal/bootstrap.min.css">
+    <link href="https://bootswatch.com/4/journal/_variables.scss">
+    <link href="https://bootswatch.com/4/journal/bootstrap.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
     <title>Crystal Game</title>
 
 </head>
 
-<body>
-    <div class="container jumbotron">
-        <div class="row">
-            <div class="col-md-12">
-                <h1 id="title">Crystal Collector!</h1>
-                <h4 id="instructionsTitle">Instructions</h4>
-                <p id="instructionsText">
-                    You will be given a random number at the start of the game.
-                    <br>
-                    There are 4 crystals below. By clicking on crystal you will add a specific amount of points to your
-                    total
-                    score.
-                    <br>
-                    You win the game by matching your score to the random number.
-                    <br>
-                    You lose the game if your total score goes above the random number.
-                    <br>
-                    The value of each crystal is hidden from you until you click on it.
-                    <br>
-                    Each time the game starts, the value of the crystals change as well as the random number.
-                </p>
-            </div>
-        </div>
-    </div>
+<body style="background-color: antiquewhite">
 
     <div class="container">
         <div class="row">
-            <div class="col-md-4">
-                <p id="randomNumberText">Score to get: </p>
-                <div class="col-md-4">
-                    <p id="winsText"> Wins: </p>
-                    <p id="lossesText">Losses: </p>
+            <div class="col-lg-12">
+                <div class="jumbotron" id="coral">
+                    <h1 class="display-4" id="crystalTitle">Crystal Collector!</h1>
+                    <p class="lead" id="instructionsTitle">Instructions</p>
+                    <hr class="my-4">
+                    <p id="instructionsText">You will be given a random number at the start of the game.
+                        <br>
+                        There are 4 crystals below. By clicking on crystal you will add a specific amount of points to
+                        your
+                        total
+                        score.
+                        <br>
+                        You win the game by matching your score to the random number.
+                        <br>
+                        You lose the game if your total score goes above the random number.
+                        <br>
+                        The value of each crystal is hidden from you until you click on it.
+                        <br>
+                        Each time the game starts, the value of the crystals change as well as the random number.</p>
                 </div>
             </div>
         </div>
@@ -53,15 +48,20 @@
 
     <div class="container">
         <div class="row">
-            <div class="col-md-12">
-                <p id="yourTotalScoreText">Your Total score is: </p>
+            <div class="col-lg-12">
+                <div class="jumbotron" id="green">
+                    <p id="randomNumberText">Score to get: </p>
+                    <p id="winsText"> Wins: </p>
+                    <p id="lossesText">Losses: </p>
+                    <p id="yourTotalScoreText">Your Total score is: </p>
+                </div>
             </div>
         </div>
     </div>
 
     <div class="container">
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-lg-12">
                 <button class="crystal blue" id="crystalOne"><img src="assets/images/bluecrystal.png" alt="blue crystal"
                         value="" class="img-thumbnail" width="200px" height="200px"></button>
                 <button class="crystal brown" id="crystalTwo"><img src="assets/images/browncrystal.jpg" alt="brown crystal"

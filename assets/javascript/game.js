@@ -66,27 +66,10 @@ console.log(crystalFour);
 console.log(crystalFour.color);
 console.log(crystalFour.points);
 
-
-//switch buscar para hacer mas eficiente, if it works use case instead of ifs. 
 //when we click on a crystal, the crystal gives out their points to Your Total Score and adds it with the next clicks
 $(".crystal").on("click", function () {
-    if ($(this).hasClass(crystalOne.color)) {
-        crystalOne.incrementPoints();
-        console.log(crystalOne.points);
-        //switch(crystal) {case "crystalOne.color": crystalOne.incrementPoints(); case "crystalTwo.color": crystalTwo.incrementPoints(); case "crystalThree.color": crystalThree.incrementPoints(); case "crystalFour.color": crystalFour.incrementPoints(); }
-    }
-    if ($(this).hasClass(crystalTwo.color)) {
-        crystalTwo.incrementPoints();
-        console.log(crystalTwo.points);
-    }
-    if ($(this).hasClass(crystalThree.color)) {
-        crystalThree.incrementPoints();
-        console.log(crystalThree.points);
-    }
-    if ($(this).hasClass(crystalFour.color)) {
-        crystalFour.incrementPoints();
-        console.log(crystalFour.points);
-    }
+    handleCrystalSelection(this);
+
     //place value on yourTotalScoreText
     yourTotalScoreText.textContent = "Your total score is: " + totalPoints;
 
@@ -108,5 +91,24 @@ $(".crystal").on("click", function () {
     lossesText.textContent = "Losses: " + losses;
 
 });
+
+function handleCrystalSelection(userChoice) {
+    if ($(userChoice).hasClass(crystalOne.color)) {
+        crystalOne.incrementPoints();
+        console.log(crystalOne.points);
+    }
+    if ($(userChoice).hasClass(crystalTwo.color)) {
+        crystalTwo.incrementPoints();
+        console.log(crystalTwo.points);
+    }
+    if ($(userChoice).hasClass(crystalThree.color)) {
+        crystalThree.incrementPoints();
+        console.log(crystalThree.points);
+    }
+    if ($(userChoice).hasClass(crystalFour.color)) {
+        crystalFour.incrementPoints();
+        console.log(crystalFour.points);
+    }
+}
 
 
